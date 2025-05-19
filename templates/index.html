@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Uplift Blog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Uplift Blog</h1>
+    <ul>
+        {% for article in articles %}
+        <li><a href="{{ url_for('article', name=article) }}">{{ article.replace('_', ' ').title() }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
